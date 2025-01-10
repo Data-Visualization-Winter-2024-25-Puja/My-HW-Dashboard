@@ -1,0 +1,39 @@
+---
+title: "My Storyboard at DACSS - frames"
+bibliography: visuals.bib
+output: 
+  flexdashboard::flex_dashboard:
+    storyboard: true
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard) # always
+```
+
+## Intro {.sidebar}
+
+Preparing the dashboard based on the instructions given at @magallanes_reyes_data_2022, and @aden-buie_flexdashboard_2024.
+
+
+
+### HW1-Barplot for count of school in the State of Washington locale.
+
+
+```{r}
+readRDS("del1Draft.rds")
+```
+
+
+
+### HW1-Histogram for Distribution of Student Teacher Ratio.
+
+```{r}
+readRDS("del2Draft.rds")
+```
+
+
+### HW2-Boxplot of Personal arrested in Massachusetts state.
+
+```{r}
+readRDS("del3Draft.rds")
+```
