@@ -75,7 +75,6 @@ str(Arrests)
 
 del3Draft= ggplot(data = Arrests, aes(x = `Arrest Type`, y = Age)) +
   geom_boxplot() +
-  # Add mean points
   stat_summary(
     fun = mean, 
     geom = "point", 
@@ -83,13 +82,12 @@ del3Draft= ggplot(data = Arrests, aes(x = `Arrest Type`, y = Age)) +
     size = 3, 
     color = "red"
   ) +
-  # Add mean values as text
   stat_summary(
     fun = mean, 
     geom = "text", 
-    aes(label = round(..y.., 1)),  # Show mean value rounded to 1 decimal
+    aes(label = round(..y.., 1)),
     color = "black",
-    vjust = -0.5,  # Position above the mean point
+    vjust = -0.5, 
     size = 3
   ) +
   labs(
@@ -97,7 +95,7 @@ del3Draft= ggplot(data = Arrests, aes(x = `Arrest Type`, y = Age)) +
     subtitle = "Visualizing age distribution with mean values across different arrest types",
     x = "Arrest Type",
     y = "Age",
-    caption = "Source:https://github.com/DACSS-Visual/tabular_bivar_catcat/raw/refs/heads/main/data/MSP%20DFS%20Arrests%2019-20Q1.xlsx"
+    caption = "Source:https://github.com/DACSS-Visual/tabular_bivar_catcat/raw/refs/heads/main/data"
   )+
   annotate(
     "text", 
