@@ -27,7 +27,7 @@ readRDS("del1Draft.rds")
 readRDS("del2Draft.rds")
 ```
 
-### HW2-Boxplot of Personal arrested in Massachusetts state in year 2019-2020.
+### HW2-Age of Personal arrested in Massachusetts state in year 2019-2020.
 
 ```{r}
 readRDS("del3Draft.rds")
