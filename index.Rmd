@@ -1,3 +1,4 @@
+
 ---
 title: "My Storyboard at DACSS - frames"
 bibliography: visuals.bib
@@ -14,16 +15,11 @@ library(flexdashboard) # always
 
 Preparing the dashboard based on the instructions given at @magallanes_reyes_data_2022, and @aden-buie_flexdashboard_2024.
 
-
-
 ### HW1-Barplot for count of school in the State of Washington locale.
-
 
 ```{r}
 readRDS("del1Draft.rds")
 ```
-
-
 
 ### HW1-Histogram for Distribution of Student Teacher Ratio.
 
@@ -31,9 +27,14 @@ readRDS("del1Draft.rds")
 readRDS("del2Draft.rds")
 ```
 
-
-### HW2-Boxplot of Personal arrested in Massachusetts state.
+### HW2-Boxplot of Personal arrested in Massachusetts state in year 2019-2020.
 
 ```{r}
 readRDS("del3Draft.rds")
 ```
+
+### HW3
+
+
+
+###

@@ -91,19 +91,12 @@ del3Draft= ggplot(data = Arrests, aes(x = `Arrest Type`, y = Age)) +
     size = 3
   ) +
   labs(
-    title = "Boxplot of Age of Personal arrested in Massachusetts state",
-    subtitle = "Visualizing age distribution with mean values across different arrest types",
-    x = "Arrest Type",
+    title = "Personal arrested in Year 2019 - 2020 ",
+    subtitle = "Age of Personal arrested for different arrest types in MA state",
+    x = NULL,
     y = "Age",
-    caption = "Source:https://github.com/DACSS-Visual/tabular_bivar_catcat/raw/refs/heads/main/data"
-  )+
-  annotate(
-    "text", 
-    x = 4, 
-    y = 50, 
-    label = "Avg age of 34.9 arrested with warrent", 
-    color = "blue", 
-    size = 4
+    caption = "Source: https://github.com/DACSS-Visual/tabular_bivar_catcat/raw/refs/heads/main/data"
+
   )+
   theme_minimal()
 
@@ -113,4 +106,5 @@ del3Draft
 saveRDS(del3Draft, file = "del3Draft.rds")
 
 
+# deliverable 4 ----------------------------------------------------------
 
