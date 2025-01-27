@@ -1,4 +1,3 @@
-
 ---
 title: "My Storyboard at DACSS - frames"
 bibliography: visuals.bib
@@ -33,8 +32,10 @@ readRDS("del2Draft.rds")
 readRDS("del3Draft.rds")
 ```
 
-### HW3
+### HW3 Multivariate Map
 
+```{r}
+readRDS("del4Draft.rds")
+```
 
-
-###
+### 

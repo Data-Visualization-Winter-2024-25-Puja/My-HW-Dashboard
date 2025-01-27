@@ -108,3 +108,44 @@ saveRDS(del3Draft, file = "del3Draft.rds")
 
 # deliverable 4 -----------------------------------------------------------
 
+library(sf)
+library(ggplot2)
+library(dplyr)
+library(readxl)
+
+# Load the spatial data (zip code boundaries)
+zip_code <- sf::read_sf("https://raw.githubusercontent.com/DACSS-Visual/SpatialData/refs/heads/main/data/zip_codes.json")
+
+# Load the contributions data
+BostonContrib <- read_excel("BostonContrib.xlsx")
+
+BostonContrib_normalized <- BostonContrib %>%
+  group_by(Zip, TenderTypeDescription) %>%
+  summarize(Average_Contribution = mean(Amount, na.rm = TRUE), .groups = "drop")
+
+zip_code <- zip_code %>%
+  mutate(ZIP5 = as.character(ZIP5))
+
+myMapContrib <- zip_code %>%
+  left_join(BostonContrib_normalized, by = c("ZIP5" = "Zip"))
+
+subset_tender_types <- c("Cash", "Check")
+myMapContrib_subset <- myMapContrib %>%
+  filter(TenderTypeDescription %in% subset_tender_types)
+
+
+del4Draft <- ggplot(data = myMapContrib_subset) +
+  geom_sf(aes(fill = Average_Contribution), color = "white") +
+  scale_fill_viridis_c(option = "plasma", name = "Avg Contribution") +
+  facet_wrap(~ TenderTypeDescription ) +
+  theme_void() +
+  labs(
+    title = "Average Contributions by Zip Code and Tender Type",
+    caption = "Data source: BostonContrib.xlsx & zip_codes.json"
+  )
+
+del4Draft
+
+
+# save del4Draft ----------------------------------------------------------
+saveRDS(del4Draft, file = "del4Draft.rds")
