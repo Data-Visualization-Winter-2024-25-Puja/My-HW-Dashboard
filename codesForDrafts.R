@@ -140,12 +140,22 @@ del4Draft <- ggplot(data = myMapContrib_subset) +
   facet_wrap(~ TenderTypeDescription ) +
   theme_void() +
   labs(
-    title = "Average Contributions by Zip Code and Tender Type in Massachusetts",
+    title = "Comparing Average Contribution Patterns Across Massachusetts Zip Codes by Tender Type Cash and Check",
+    
+    
     caption = "Data source: BostonContrib.xlsx & zip_codes.json"
   )
 
 del4Draft
 
 
+
+
 # save del4Draft ----------------------------------------------------------
 saveRDS(del4Draft, file = "del4Draft.rds")
+
+
+
+
+
+
